@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BudaSmash Burger'n'Fries</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="language-toggle">
+                <label class="language-switch">
+                    <input type="checkbox" id="language-toggle">
+                    <span class="slider round">
+                        <svg class="flag hu-flag" width="24" height="16">
+                            <use href="#hungary-flag"></use>
+                        </svg>
+                        <svg class="flag us-flag" width="24" height="16">
+                            <use href="#usa-flag"></use>
+                        </svg>
+                    </span>
+                </label>
+            </div>
+            <div class="logo"><img src="img/logo.png" alt="BudaSmash Burger'n'Fries Logo"></div>
+        </header>
+        
+        <section class="menu-section">
+            <div class="menu-item">
+                <div class="item-name">
+                    <span data-hu="BUDASMASH BURGER" data-en="BUDASMASH BURGER"></span>
+                    <span class="item-price">2290</span>
+                </div>
+                <div class="item-description" data-hu="Vajazott, pirított buci, dupla húspogácsa (100% marhahús), amerikai sajt, grillezett hagyma, savanyú uborka, speciális BudaSmash szósz" data-en="Buttered bun, double beef patty, american cheese, pickles, onions, Special BudaSmash sauce"></div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    <span data-hu="CLASSIC CHEESEBURGER" data-en="CLASSIC CHEESEBURGER"></span>
+                    <span class="item-price">2290</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    <span data-hu="BUDASMASH XL BURGER" data-en="BUDASMASH XL BURGER"></span>
+                    <span class="item-price">3490</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    <span data-hu="CLASSIC XL BURGER" data-en="CLASSIC XL BURGER"></span>
+                    <span class="item-price">3490</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    <span data-hu="SÜLTKRUMPLI" data-en="FRIES"></span>
+                    <span class="item-price">890</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    <span data-hu="HÚSPOGÁCSA & SÜLTKRUMPLI" data-en="PATTY & FRIES"></span>
+                    <span class="item-price">1990</span>
+                </div>
+                <div class="item-description" data-hu="Sültkrupli, dupla húspogácsa (100% marhahús), amerikai sajt, grillezett hagyma, speciális BudaSmash szósz" data-en="Fries, double beef patty, american cheese, onions, Special BudaSmash sauce"></div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    <span data-hu="COLA 0,33" data-en="COKE 0,33"></span>
+                    <span class="item-price">690</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    <span data-hu="NESTEA CITROM" data-en="NESTEA LEMON"></span>
+                    <span class="item-price">690</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    <span data-hu="MILLER" data-en="MILLER"></span>
+                    <span class="item-price">990</span>
+                </div>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-name">
+                    <span data-hu="VÍZ" data-en="WATER"></span>
+                    <span class="item-price">490</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="hours-section">
+            <div class="hours-title" data-hu="NYITVATARTÁS" data-en="OPENING HOURS"></div>
+            <div data-hu="KEDD-VASÁRNAP 11:00-22:00" data-en="TUESDAY-SUNDAY 11:00-22:00"></div>
+        </section>
+        
+        <div class="address">
+            <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x4741dd0026310ff5:0x926d35a7e6b7f019?sa=X&ved=1t:8290&ictx=1111" target="_blank">1111 Budapest, Bartók Béla út 44</a>
+        </div>
+        
+        <div class="cta-buttons">
+            <a href="https://wolt.com/hu/hun/budapest/restaurant/budasmash" target="_blank" class="btn btn-order" data-hu="RENDELÉS" data-en="ORDER"></a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageToggle = document.getElementById('language-toggle');
+            
+            // Set Hungarian as default
+            setLanguage('hu');
+            
+            languageToggle.addEventListener('change', function() {
+                const lang = this.checked ? 'en' : 'hu';
+                setLanguage(lang);
+            });
+            
+            function setLanguage(lang) {
+                document.querySelectorAll('[data-hu], [data-en]').forEach(element => {
+                    if (element.hasAttribute(`data-${lang}`)) {
+                        if (element.tagName === 'A' || element.tagName === 'BUTTON') {
+                            element.textContent = element.getAttribute(`data-${lang}`);
+                        } else {
+                            element.innerHTML = element.getAttribute(`data-${lang}`);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+<!-- Hidden SVG flags for later use -->
+<svg style="display:none;">
+  <symbol id="hungary-flag" viewBox="0 0 60 30">
+    <rect width="50" height="10" y="0" fill="#cd2a3e"/>
+    <rect width="50" height="10" y="10" fill="#fff"/>
+    <rect width="50" height="10" y="20" fill="#436f4d"/>
+  </symbol>
+  <symbol id="usa-flag" viewBox="0 0 60 30">
+    <rect width="50" height="30" fill="#b22234"/>
+    <rect width="50" height="2" y="2" fill="#fff"/>
+    <rect width="50" height="2" y="6" fill="#fff"/>
+    <rect width="50" height="2" y="10" fill="#fff"/>
+    <rect width="50" height="2" y="14" fill="#fff"/>
+    <rect width="50" height="2" y="18" fill="#fff"/>
+    <rect width="50" height="2" y="22" fill="#fff"/>
+    <rect width="50" height="2" y="26" fill="#fff"/>
+    <rect width="24" height="14" fill="#3c3b6e"/>
+    <circle cx="4" cy="4" r="1.5" fill="#fff"/>
+    <circle cx="8" cy="4" r="1.5" fill="#fff"/>
+    <circle cx="12" cy="4" r="1.5" fill="#fff"/>
+    <circle cx="16" cy="4" r="1.5" fill="#fff"/>
+    <circle cx="20" cy="4" r="1.5" fill="#fff"/>
+    <circle cx="6" cy="7" r="1.5" fill="#fff"/>
+    <circle cx="10" cy="7" r="1.5" fill="#fff"/>
+    <circle cx="14" cy="7" r="1.5" fill="#fff"/>
+    <circle cx="18" cy="7" r="1.5" fill="#fff"/>
+    <circle cx="4" cy="10" r="1.5" fill="#fff"/>
+    <circle cx="8" cy="10" r="1.5" fill="#fff"/>
+    <circle cx="12" cy="10" r="1.5" fill="#fff"/>
+    <circle cx="16" cy="10" r="1.5" fill="#fff"/>
+    <circle cx="20" cy="10" r="1.5" fill="#fff"/>
+  </symbol>
+</svg>

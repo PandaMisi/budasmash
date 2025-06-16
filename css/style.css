@@ -1,0 +1,254 @@
+@font-face {
+        font-family: 'HI-Kakuhihewa-Bold';
+        src:url('../fonts/HI-Kakuhihewa-Bold.ttf.woff') format('woff'),
+            url('../fonts/HI-Kakuhihewa-Bold.ttf.svg#HI-Kakuhihewa-Bold') format('svg'),
+            url('../fonts/HI-Kakuhihewa-Bold.ttf.eot'),
+            url('../fonts/HI-Kakuhihewa-Bold.ttf.eot?#iefix') format('embedded-opentype'); 
+        font-weight: normal;
+        font-style: normal;
+}
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #111;
+    line-height: 1.3;
+    font-family: 'HI-Kakuhihewa-Bold', sans-serif;
+}
+
+.address a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.reviews-badge {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.logo {
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.logo {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+.logo img {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+.menu-section {
+    margin-bottom: 30px;
+}
+
+.menu-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.item-name {
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    text-transform: uppercase;
+}
+
+.item-description {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 5px;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.item-price {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.hours-section {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.hours-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.hours-section div {
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.address {
+    text-align: center;
+    font-weight: bold;
+    margin: 25px 0;
+    font-size: 1rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.language-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.language-switch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+}
+
+.language-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    transition: .4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.language-switch input:checked + .slider {
+    background-color: #f5f5f5;
+}
+
+.flag {
+    width: 25px;
+    transition: all 0.3s ease;
+}
+
+.hu-flag {
+    opacity: 1;
+}
+
+.us-flag {
+    opacity: 0.7;
+}
+
+.language-switch input:checked + .slider .hu-flag {
+    opacity: 0.7;
+}
+
+.language-switch input:checked + .slider .us-flag {
+    opacity: 1;
+}
+
+/* Update the button styles to work with anchor tag */
+.btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Courier Round Bold', monospace;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn-join {
+    background-color: #111;
+    color: white;
+}
+
+.btn-order {
+    background-color: #111;
+    color: white;
+    border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+    
+    .item-name {
+        font-size: 1.3rem;
+    }
+    
+    .item-price {
+        font-size: 1.2rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
